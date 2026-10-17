@@ -1,0 +1,97 @@
+.featured-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: calc(0.25rem - 1px);
+}
+
+.single-img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: calc(0.25rem - 1px);
+}
+
+.post-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: calc(0.25rem - 1px);
+}
+
+.card-height {
+    height: 300px;
+    position: relative;
+}
+
+.unstyle-categories {
+    text-decoration: none;
+}
+
+.modal {
+    z-index: 1055;
+}
+
+.nav-purple {
+    background-color: #6a0dad;
+}
+
+/* Default warna teks navbar */
+.navbar .nav-link {
+    color: white !important;
+    /* Warna font default putih */
+    transition: color 0.3s ease;
+    /* Transisi saat hover */
+}
+
+/* Warna teks saat hover */
+.navbar .nav-link:hover {
+    color: #d3d3d3 !important;
+    /* Warna font abu-abu */
+}
+
+.bg-purple {
+    background-color: #6a0dad;
+    color: white;
+}
+
+.bg-purple:hover {
+    background-color: #5a2d91;
+}
+
+.font-black {
+    color: black;
+}
+
+/* Default warna teks */
+.dropdown-item {
+    color: white;
+    /* Warna teks putih secara default */
+    background-color: transparent;
+    /* Background transparan atau sesuai kebutuhan */
+}
+
+/* Saat hover */
+.dropdown-item:hover {
+    background-color: #6c3483;
+    /* Warna background ungu saat hover */
+    color: black;
+    /* Warna teks berubah jadi hitam */
+}
+
+/* Saat aktif atau fokus */
+.dropdown-item:active,
+.dropdown-item:focus {
+    background-color: #6c3483;
+    /* Warna background ungu */
+    color: black;
+    /* Warna teks tetap hitam */
+    outline: none;
+    box-shadow: none;
+}
+
+.pagination .active {
+    background-color: #FF5733;
+    /* Warna latar belakang */
+    color: #FFFFFF;
+    /* Warna teks */
+}
