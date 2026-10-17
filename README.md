@@ -15,25 +15,24 @@
   <img src="https://img.shields.io/badge/MySQL-8.x-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
   <img src="https://img.shields.io/badge/Bootstrap-5.x-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap">
   <img src="https://img.shields.io/badge/Vite-Bundler-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite">
-  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License MIT">
 </p>
 
 ---
 
 ## 📌 Daftar Isi
-1. [Tentang Proyek (About Project)](#-tentang-proyek-about-project)
+1. [Tentang Proyek](#-tentang-proyek)
 2. [Fitur Utama](#-fitur-utama)
 3. [Teknologi & Dependensi](#-teknologi--dependensi)
 4. [Arsitektur & Struktur Direktori](#-arsitektur--struktur-direktori)
 5. [Panduan Instalasi Cepat](#-panduan-instalasi-cepat)
 6. [Kredensial Default](#-kredensial-default)
-7. [Manual Book & Panduan Fitur](#-manual-book--panduan-fitur)
+7. [Panduan Penggunaan Fitur](#-panduan-penggunaan-fitur)
 8. [Perintah Artisan Pemeliharaan](#-perintah-artisan-pemeliharaan)
-9. [Kontribusi & Lisensi](#-kontribusi--lisensi)
+9. [Pengembang & Kontak](#-pengembang--kontak)
 
 ---
 
-## 📖 Tentang Proyek (About Project)
+## 📖 Tentang Proyek
 
 **News-5** adalah sistem portal berita digital (*Content Management System*) modern yang dirancang khusus untuk kebutuhan publikasi media daring profesional. Aplikasi ini menggabungkan antarmuka pembaca (*front-end*) bergaya majalah editorial kontemporer dengan ruang baca yang nyaman serta panel pengelolaan (*backoffice*) yang responsif, terstruktur, dan intuitif.
 
@@ -85,12 +84,12 @@ news-5/
 │   ├── Http/
 │   │   ├── Controllers/
 │   │   │   ├── Auth/             # Autentikasi Login, Register, Password Reset
-│   │   │   ├── Back/             # Controller Admin (Article, Category, User, Config, Dashboard)
-│   │   │   └── Front/            # Controller Portal Pembaca (Home, Article, Category, About)
+│   │   │   ├── Back/             # Controller Admin (Article, Category, User, Dashboard)
+│   │   │   └── Front/            # Controller Portal Pembaca (Home, Article, Category)
 │   │   ├── Middleware/           # UserAccess (Role-based access guard)
 │   │   └── Requests/             # Form Request Validation rules
-│   ├── Livewire/                 # Komponen Interaktif (Comment.php)
-│   └── Models/                   # Eloquent Models (Article, Category, User, Config, Comment)
+│   ├── Livewire/                 # Komponen interaktif (Comment.php)
+│   └── Models/                   # Eloquent Models (Article, Category, User, Comment)
 ├── config/                       # Konfigurasi aplikasi & database
 ├── database/
 │   ├── migrations/               # Skema migrasi database
@@ -107,10 +106,15 @@ news-5/
 │       └── front/                # Template & halaman Portal Pembaca
 ├── routes/
 │   └── web.php                   # Definisi seluruh rute aplikasi
-├── CONTRIBUTING.md               # Panduan kontribusi pengembang
-├── LICENSE                       # Lisensi resmi (MIT)
-├── MANUAL_BOOK.md                # Buku panduan lengkap pembaca, jurnalis, & admin
-└── README.md                     # Dokumentasi utama repositori
+├── .editorconfig                 # Konfigurasi format editor
+├── .env.example                  # Template variabel lingkungan
+├── .gitignore                    # Pengecualian berkas git
+├── artisan                       # CLI command runner Laravel
+├── composer.json                 # Dependensi paket PHP
+├── package.json                  # Dependensi paket Node.js & Vite
+├── tailwind.config.js            # Konfigurasi Tailwind CSS
+├── vite.config.js                # Konfigurasi bundler Vite
+└── README.md                     # Dokumentasi utama proyek
 `
 
 ---
@@ -184,15 +188,13 @@ Setelah menjalankan migrasi dan seeder, akun administrator default berikut dapat
 
 ---
 
-## 📚 Manual Book & Panduan Fitur
+## 🧭 Panduan Penggunaan Fitur
 
-> 📘 Buku panduan penggunaan lengkap untuk pembaca, jurnalis, editor, dan super admin tersedia di berkas **[MANUAL_BOOK.md](MANUAL_BOOK.md)**.
-
-### Ringkasan Alur Penerbitan Berita:
-1. Masuk ke panel admin di /login.
+### Alur Penerbitan Berita:
+1. Masuk ke panel admin di /login dengan akun administrator.
 2. Buat topik kategori berita di menu **Categories** (jika belum ada).
 3. Buka menu **Articles** -> klik **Tambah Artikel**.
-4. Masukkan judul berita, pilih kategori, unggah foto sampul, tulis isi berita, lalu ubah status ke **Publish**.
+4. Masukkan judul berita, pilih kategori yang sesuai, unggah foto sampul artikel, tulis isi berita, lalu pilih status **Publish**.
 5. Artikel akan otomatis tayang di halaman utama dan halaman kategori terkait.
 
 ---
@@ -209,11 +211,8 @@ Setelah menjalankan migrasi dan seeder, akun administrator default berikut dapat
 
 ---
 
-## 📄 Kontribusi & Lisensi
-
-Proyek ini dilisensikan di bawah lisensi **[MIT License](LICENSE)**.
+## 👤 Pengembang & Kontak
 
 * **Pengembang**: **Khonif Zakaria** ([NivDev](https://github.com/Khoniv))
 * **GitHub**: [@Khoniv](https://github.com/Khoniv)
 * **Email**: [oniefzk11@gmail.com](mailto:oniefzk11@gmail.com)
-* Panduan berkontribusi: **[CONTRIBUTING.md](CONTRIBUTING.md)**
