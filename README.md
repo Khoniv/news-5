@@ -56,8 +56,8 @@ Dibangun dengan arsitektur modern **Laravel 11**, aplikasi ini memprioritaskan p
 - **Manajemen Artikel (CRUD)**: Editor teks kaya, upload gambar sampul, pemilihan kategori, auto-generate slug URL, dan status Draft/Publish.
 - **Manajemen Kategori**: Pengelompokan berita dengan validasi slug unik otomatis.
 - **Manajemen Pengguna & Peran (Role-Based Access Control)**:
-  - Role 1 : **Admin** (Akses penuh ke seluruh konfigurasi, user, artikel, dan kategori).
-  - Role 2 : **User / Penulis** (Akses terbatas ke artikel dan diskusi komentar).
+  - `Role 1` : **Admin** (Akses penuh ke seluruh konfigurasi, user, artikel, dan kategori).
+  - `Role 2` : **User / Penulis** (Akses terbatas ke artikel dan diskusi komentar).
 - **Pengaturan Situs (Website Configuration)**: Pengaturan nama portal, deskripsi meta SEO, favicon, logo, dan integrasi tautan media sosial.
 
 ---
@@ -78,7 +78,7 @@ Dibangun dengan arsitektur modern **Laravel 11**, aplikasi ini memprioritaskan p
 
 ## 📂 Arsitektur & Struktur Direktori
 
-`	ext
+```text
 news-5/
 ├── app/
 │   ├── Http/
@@ -115,7 +115,7 @@ news-5/
 ├── tailwind.config.js            # Konfigurasi Tailwind CSS
 ├── vite.config.js                # Konfigurasi bundler Vite
 └── README.md                     # Dokumentasi utama proyek
-`
+```
 
 ---
 
@@ -123,55 +123,54 @@ news-5/
 
 ### 1. Prasyarat Sistem
 Pastikan perangkat Anda telah terpasang:
-- **PHP** >= 8.2 (ekstensi: pdo_mysql, mbstring, openssl, 	okenizer, xml, ctype, json, ileinfo)
+- **PHP** >= 8.2 (ekstensi: `pdo_mysql`, `mbstring`, `openssl`, `tokenizer`, `xml`, `ctype`, `json`, `fileinfo`)
 - **Composer** (v2+)
 - **MySQL / MariaDB**
 - **Node.js & NPM** (Node v18+)
 - **Git**
 
 ### 2. Clone Repositori
-`ash
+```bash
 git clone https://github.com/Khoniv/news-5.git
 cd news-5
-`
+```
 
 ### 3. Pasang Dependensi
-`ash
+```bash
 composer install
 npm install
-`
+```
 
-### 4. Setup File .env
-`ash
+### 4. Setup File `.env`
+```bash
 cp .env.example .env
 php artisan key:generate
-`
-Sesuaikan koneksi database Anda di .env:
-`env
+```
+Sesuaikan koneksi database Anda di `.env`:
+```env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=news_5
 DB_USERNAME=root
 DB_PASSWORD=
-`
+```
 
 ### 5. Migrasi & Seeder Database
-Buat database bernama 
-ews_5 di MySQL, lalu jalankan:
-`ash
+Buat database bernama `news_5` di MySQL, lalu jalankan:
+```bash
 php artisan migrate --seed
-`
+```
 
 ### 6. Tautkan Direktori Penyimpanan Media
-`ash
+```bash
 php artisan storage:link
-`
+```
 
 ### 7. Jalankan Server Lokal
-`ash
+```bash
 php artisan serve
-`
+```
 Buka browser Anda di:
 - **Portal Berita (Frontend)**: [http://127.0.0.1:8000](http://127.0.0.1:8000)
 - **Halaman Login Admin**: [http://127.0.0.1:8000/login](http://127.0.0.1:8000/login)
@@ -184,14 +183,14 @@ Setelah menjalankan migrasi dan seeder, akun administrator default berikut dapat
 
 | Role | Email | Password | Hak Akses |
 |---|---|---|---|
-| **Admin** | dmin@gmail.com | dmin123 | Akses penuh dashboard, artikel, kategori, user, dan setelan portal |
+| **Admin** | `admin@gmail.com` | `admin123` | Akses penuh dashboard, artikel, kategori, user, dan setelan portal |
 
 ---
 
 ## 🧭 Panduan Penggunaan Fitur
 
 ### Alur Penerbitan Berita:
-1. Masuk ke panel admin di /login dengan akun administrator.
+1. Masuk ke panel admin di `/login` dengan akun administrator.
 2. Buat topik kategori berita di menu **Categories** (jika belum ada).
 3. Buka menu **Articles** -> klik **Tambah Artikel**.
 4. Masukkan judul berita, pilih kategori yang sesuai, unggah foto sampul artikel, tulis isi berita, lalu pilih status **Publish**.
@@ -203,11 +202,11 @@ Setelah menjalankan migrasi dan seeder, akun administrator default berikut dapat
 
 | Perintah | Deskripsi |
 |---|---|
-| php artisan serve | Menjalankan web server lokal Laravel |
-| php artisan migrate:fresh --seed | Menyetel ulang seluruh skema database dan mengisi data contoh |
-| php artisan optimize:clear | Menghapus seluruh cache (config, view, route, application) |
-| php artisan storage:link | Menautkan folder penyimpanan publik untuk cover artikel |
-| php artisan test | Menjalankan pengujian otomatis Pest PHP |
+| `php artisan serve` | Menjalankan web server lokal Laravel |
+| `php artisan migrate:fresh --seed` | Menyetel ulang seluruh skema database dan mengisi data contoh |
+| `php artisan optimize:clear` | Menghapus seluruh cache (config, view, route, application) |
+| `php artisan storage:link` | Menautkan folder penyimpanan publik untuk cover artikel |
+| `php artisan test` | Menjalankan pengujian otomatis Pest PHP |
 
 ---
 
