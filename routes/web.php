@@ -45,16 +45,3 @@ Route::get('category/{slug}', [FrontCategoryController::class, 'index']);
 
 // Authentication routes
 Auth::routes();
-Route::get('/_dbg', function () {
-    $db = env('DB_DATABASE');
-    return response()->json([
-        'app_key_set' => !empty(env('APP_KEY')),
-        'app_debug' => env('APP_DEBUG'),
-        'db_connection' => env('DB_CONNECTION'),
-        'db_database' => $db,
-        'pdo_sqlite' => extension_loaded('pdo_sqlite'),
-        'dbfile_exists' => $db ? file_exists($db) : null,
-        'cwd' => getcwd(),
-        'api_dir' => is_dir(__DIR__.'/../api') ? realpath(__DIR__.'/../api') : null,
-    ]);
-});
