@@ -29,7 +29,11 @@ class ArticleController extends Controller
     public function show($slug)
     {
         $article = Article::whereSlug($slug)->firstOrFail();
-        $article->increment('views');
+        try {
+            $article->increment('views');
+        } catch (\Throwable $e) {
+            // read-only filesystem on serverless (Vercel) — skip view counter
+        }
         return view('front.article.show', [
             'article' => $article,
             'categories' => Category::latest()->get(),
